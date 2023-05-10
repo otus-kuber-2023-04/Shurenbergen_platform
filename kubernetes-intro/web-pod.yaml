@@ -1,0 +1,15 @@
+apiVersion: v1          # Версия API
+
+kind: Pod               # Объект, который создаем
+
+metadata:
+    name: web
+    labels:             # Метки в формате key: value
+        app: web
+
+spec:                   # Описание Pod
+    containers:         # Описание контейнеров внутри Pod
+    - name: web
+      image: shurenbergen/angular-starter:v1.0
+      ports:
+        - containerPort: 8000
