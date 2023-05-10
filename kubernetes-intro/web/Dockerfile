@@ -20,4 +20,4 @@ RUN chown -R nginx:nginx /var/cache/nginx && \
     touch /var/run/nginx.pid && \
     chown -R nginx:nginx /var/run/nginx.pid
 # switch to non-root user
-USER nginx
+# USER nginx
