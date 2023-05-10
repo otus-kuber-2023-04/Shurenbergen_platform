@@ -37,6 +37,6 @@ kubectl port-forward --address 0.0.0.0 pod/frontend 8080:8080
  - перейти по ссылке http://localhost:8000 - webserver
 
  - перейти по ссылке http://localhost:8080 - frontend
-
+```
 ## PR checklist:
- - [ ] Выставлен label с темой домашнего задания
+ - [x] Выставлен label с темой домашнего задания
