@@ -1,12 +1,11 @@
- apiVersion: v1
- kind: ConfigMap
- metadata:
-    namespace: metallb-system
-    name: config
- data:
-    config: |
-      address-pools:
-        - name: default
-          protocol: layer2
-          addresses:
-            - "172.17.255.1-172.17.255.255"
+apiVersion: metallb.io/v1beta1
+
+kind: IPAddressPool
+
+metadata:
+  name: config
+  namespace: metallb-system
+
+spec:
+  addresses:
+  - 172.17.255.1-172.17.255.255
