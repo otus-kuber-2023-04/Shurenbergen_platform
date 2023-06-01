@@ -35,13 +35,13 @@ spec:
             port: 8000
         readinessProbe:
           httpGet:
-            path: /usr/share/nginx/html/index.html
+            path: /
             port: 8000
         ports:
           - containerPort: 8000
         volumeMounts:
         - name: app
-          mountPath: /usr/share/nginx/html
+          mountPath: /app
 
 
       
