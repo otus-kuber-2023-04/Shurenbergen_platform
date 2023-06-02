@@ -1,0 +1,33 @@
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+
+kind: ClusterRole
+
+metadata:
+  name: prometheus-readers
+  namespace: prometheus
+
+rules:
+  - apiGroups: [ "*" ]
+    resources: [ pods ]
+    verbs: [ get, list, watch]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+
+kind: ClusterRoleBinding
+
+metadata:
+  name: get-list-watch
+
+subjects:
+- kind: Group
+  name: system:serviceaccounts:prometheus
+  namespace: ""                                   # оставляем пустой неймспейс потому что объект - группа
+
+roleRef:
+  kind: ClusterRole
+  name: prometheus-reads
+  apiGroup: rbac.authorization.k8s.io
