@@ -6,11 +6,11 @@ kind: ClusterRoleBinding
 
 metadata:
   name: jane-binding
+  namespace: dev
 
 subjects:
 - kind: ServiceAccount
   name: jane
-  namespace: dev
 
 roleRef:
   apiGroup: rbac.authorization.k8s.io
