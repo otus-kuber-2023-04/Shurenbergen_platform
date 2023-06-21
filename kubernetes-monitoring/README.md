@@ -21,7 +21,9 @@ kubectl apply -f servicemonitor.yaml && \
 kubectl create -f prometheus.yaml 
 ```
 получаем деплойменты и все остальное
+
 ![deployments](./screenshots/deployments.png?raw=true "k9s")
+
 проброс портов
 ```
 kubectl port-forward deployments/nginx 8000:80
