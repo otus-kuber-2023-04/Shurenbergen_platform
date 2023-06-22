@@ -150,9 +150,9 @@ NAME                         COMPLETIONS   DURATION   AGE
 backup-mysql-instance-job    1/1           5s         45s
 restore-mysql-instance-job   0/1           7m26s      7m26s
 ```
+пруфы
 
-![deployments](./screenshots/pv.png?raw=true "k9s")
-![deployments](./screenshots/pvc.png?raw=true "k9s")
 ![deployments](./screenshots/table.png?raw=true "k9s")
+![deployments](./screenshots/pvc.png?raw=true "k9s")
 ![deployments](./screenshots/backup.png?raw=true "k9s")
 ![deployments](./screenshots/restore.png?raw=true "k9s")
