@@ -1,20 +1,3 @@
-```
-cd kubernetes-templating
-```
-
-nginx-ingress
-```
-kubectl create ns nginx-ingress && \
-helm install nginx-ingress oci://ghcr.io/nginxinc/charts/nginx-ingress --namespace nginx-ingress --version 0.18.0
-```
-
-kubectl create ns nginx-ingress && \
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx && \
-helm repo update && \
-helm install ingress-nginx ingress-nginx/ingress-nginx --namespace=nginx-ingress && \
---version=4.7.0 
-
-
 # Выполнено ДЗ №9 kubernetes-templating
 
  - [x] Основное ДЗ
