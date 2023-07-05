@@ -1,0 +1,50 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hipster-shop-prod
+nameSuffix: -prod
+commonLabels:
+  app: recommendationservice-prod
+
+resources:
+- ../../base
+
+patches:
+- patch: |
+    ---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: recommendationservice
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: recommendationservice-prod
+      template:
+        metadata:
+          labels:
+            app: recommendationservice-prod
+        spec:
+          containers:
+          - name: server
+            resources:
+              requests:
+                cpu: 200m
+                memory: 128Mi
+              limits:
+                cpu: 500m
+                memory: 256Mi
+  target:
+    kind: Deployment
+- patch: |
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: recommendationservice
+    spec:
+      type: ClusterIP
+      selector:
+        app: recommendationservice-prod
+  target:
+    kind: Service
